@@ -44,15 +44,14 @@ public class Algorithms {
 		}
 		return longestWord;
 	}
-	public static Boolean containsSOS(List<Boolean> words) {
-		Boolean messagesss;
-		int longestLength = 0;
-		for (int i = 0; i < words.size(); i++) {
-			if (words.get(i).length() > longestLength) {
-				longestLength = words.get(i).length();
-				longestWord = words.get(i);
+	public static Boolean containsSOS(List<String> message1) {
+		Boolean messages = null;
+		String coantinsSOS = "... --- ...";
+		for (int i = 0; i < message1.size(); i++) {
+			if (message1.contains(coantinsSOS)) {
+				return true;
 			}
 		}
-		return longestWord;
+		return true;
 	}
 }
