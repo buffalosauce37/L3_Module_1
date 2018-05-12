@@ -44,14 +44,25 @@ public class Algorithms {
 		}
 		return longestWord;
 	}
-	public static Boolean containsSOS(List<String> message1) {
+
+	public static Boolean containsSOS(List<String> mbagel) {
 		Boolean messages = null;
 		String coantinsSOS = "... --- ...";
-		for (int i = 0; i < message1.size(); i++) {
-			if (message1.contains(coantinsSOS)) {
+		for (int i = 0; i < mbagel.size(); i++) {
+			if (mbagel.get(i).contains(coantinsSOS)) {
 				return true;
 			}
 		}
-		return true;
+		return false;
+	}
+
+	public static Double testSort(List<Double> score) {
+		Double sortScores = (double) 0;
+		for (int i = 0; i < score.size(); i++) {
+			if (score.get(i) >= sortScores) {
+				sortScores = score.get(i);
+			}
+		}
+		return sortScores;
 	}
 }
