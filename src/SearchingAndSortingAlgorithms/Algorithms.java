@@ -56,13 +56,13 @@ public class Algorithms {
 		return false;
 	}
 
-	public static Double testSort(List<Double> score) {
-		Double sortScores = (double) 0;
-		for (int i = 0; i < score.size(); i++) {
-			if (score.get(i) >= sortScores) {
-				sortScores = score.get(i);
+	public static List<Double> sortScores(List<Double> results) {
+		Double scores = (double) 0;
+		for (int i = 0; i < results.size(); i++) {
+			if (results.get(i) <= scores) {
+				scores = results.get(i);
 			}
 		}
-		return sortScores;
+		return results;
 	}
 }
