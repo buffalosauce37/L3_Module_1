@@ -1,5 +1,6 @@
 package SearchingAndSortingAlgorithms;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Algorithms {
@@ -56,13 +57,63 @@ public class Algorithms {
 		return false;
 	}
 
-	public static List<Double> sortScores(List<Double> results) {
-		Double scores = (double) 0;
-		for (int i = 0; i < results.size(); i++) {
-			if (results.get(i) <= scores) {
-				scores = results.get(i);
+	public static List<Double> sortScores(List<Double> resultsList) {
+		ArrayList<Double> results = new ArrayList<Double>(resultsList);
+		
+		ArrayList<Double> sorted = new ArrayList<Double>();
+		while (results.size() >= 1) {
+			Double scores = (double) 99999999;
+			for (int j = 0; j < results.size(); j++) {
+				if (results.get(j) <= scores) {
+					scores = results.get(j);
+				}
+
 			}
+
+			sorted.add(scores);
+			results.remove(scores);
 		}
-		return results;
+
+		return sorted;
+	}
+	public static List<String> sortDNA(List<String> DNAList) {
+		ArrayList<String> DNA = new ArrayList<String>(DNAList);
+		
+		ArrayList<String> sorted = new ArrayList<String>();
+		while (DNA.size() >= 1) {
+			String shortestDNA = DNA.get(0);
+			for (int j = 0; j < DNA.size(); j++) {
+				if (DNA.get(j).length() <= shortestDNA.length()) {
+					shortestDNA = DNA.get(j);
+				}
+
+			}
+
+			sorted.add(shortestDNA);
+			DNA.remove(shortestDNA);
+			System.out.println(sorted);
+		}
+
+		return sorted;
+	}
+	public static List<String> sortWords(List<String> WordList) {
+		ArrayList<String> Words = new ArrayList<String>(WordList);
+		
+		ArrayList<String> sorted = new ArrayList<String>();
+		while (Words.size() >= 1) {
+			String firstWord = Words.get(0);
+			for (int j = 0; j < Words.size(); j++) {
+				if (Words.get(j).compareTo(firstWord) <0) {
+					firstWord = Words.get(j);
+				}
+
+			}
+
+			sorted.add(firstWord);
+			Words.remove(firstWord);
+			System.out.println(sorted);
+		}
+
+		return sorted;
 	}
 }
